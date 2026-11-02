@@ -57,6 +57,8 @@ test.describe('payment before the booking (test environment)', () => {
   }) => {
     await signIn(page, CLIENT.email);
     await chooseATime(page);
+    // The booking screen has a "Voltar" too: wait for the payment screen, or the click lands on the wrong one
+    await expect(page).toHaveURL(/\/pagamento$/);
     await page.getByRole('button', { name: 'Voltar' }).click();
 
     await expect(page).toHaveURL(/\/agendar\?servicos=/);
