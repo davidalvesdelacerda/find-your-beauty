@@ -1,5 +1,5 @@
-@use 'patterns' as *;
-@use 'breakpoints' as *;
+@use '../../../styles/patterns' as *;
+@use '../../../styles/breakpoints' as *;
 .container {
   margin: 0 auto;
   padding: 0 1.5rem;

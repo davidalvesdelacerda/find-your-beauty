@@ -1,5 +1,5 @@
-@use 'patterns' as *;
-@use 'breakpoints' as *;
+@use '../../../styles/patterns' as *;
+@use '../../../styles/breakpoints' as *;
 // The screen of a service: a sheet over the page (opened by "Ler mais")
 .screen-backdrop {
   position: fixed;

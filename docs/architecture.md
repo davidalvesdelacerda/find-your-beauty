@@ -105,7 +105,7 @@ Component styles are SCSS (scoped). What is shared lives in two places:
   a variable; it is never overridden by class name. Text that sits on the teal uses `--teal` (not `--primary`, which
   is white there), and a button's letters use `--on-primary`.
 - **Mixins** are in `src/styles/_breakpoints.scss` (`desktop`, `reduced-motion`). Use them with
-  `@use 'breakpoints' as *;` in any component style (`stylePreprocessorOptions.includePaths` in `angular.json`).
+  `@use` with the relative path to `src/styles/breakpoints` (for example `@use '../../../styles/breakpoints' as *;`). The path is relative on purpose: Angular, Storybook and Stylelint all resolve it, which a configured include path would not do.
 - **Patterns** are mixins for blocks that several screens repeated as they were, in `src/styles/_patterns.scss`
   (`page-column`, `solid-button`, `danger-outline-button`, `icon-size`, `cover-image`, `selected`, `heart-button`,
   `back-button`). Before copying a block between two styles, check there or add a mixin.

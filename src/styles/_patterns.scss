@@ -1,4 +1,4 @@
-// Blocks that several screens repeated as they were: `@use 'patterns' as *;`
+// Blocks that several screens repeated as they were: `@use '<path to src/styles>/patterns' as *;`
 
 // Centered column of the wide pages
 @mixin page-column {

@@ -1,5 +1,5 @@
-@use 'patterns' as *;
-@use 'breakpoints' as *;
+@use '../../../styles/patterns' as *;
+@use '../../../styles/breakpoints' as *;
 .inbox {
   max-width: 48rem;
   margin: 0 auto;

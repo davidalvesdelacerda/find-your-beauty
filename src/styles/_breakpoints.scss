@@ -1,4 +1,4 @@
-// Breakpoints shared by the component styles: `@use 'breakpoints' as *;`
+// Breakpoints shared by the component styles: `@use '<path to src/styles>/breakpoints' as *;`
 @mixin desktop {
   @media (min-width: 1024px) {
     @content;

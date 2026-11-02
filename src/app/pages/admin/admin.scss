@@ -1,5 +1,5 @@
-@use 'patterns' as *;
-@use 'breakpoints' as *;
+@use '../../../styles/patterns' as *;
+@use '../../../styles/breakpoints' as *;
 .admin {
   @include page-column;
 }
