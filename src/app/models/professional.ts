@@ -112,7 +112,7 @@ export const DEFAULT_AVAILABILITY: Availability = {
 };
 
 // A photo copied from the professional's connected Instagram
-export type InstagramPhoto = {
+type InstagramPhoto = {
   id: string;
   url: string;
   permalink: string;
@@ -178,7 +178,7 @@ export const hasLocation = (professional: Pick<Professional, 'serviceMode' | 'po
 
 // "Av. Afrânio de Melo Franco, 141 - Leblon, Rio de Janeiro - RJ, 22430-060" -> "Av. Afrânio de Melo Franco, 141 - Leblon, RJ":
 // street and number (when there is one), neighborhood and state, without the city and the postal code
-export const shortAddress = (address: string) => {
+const shortAddress = (address: string) => {
   const text = address
     .replace(/,?\s*Brasil$/i, '')
     .replace(/,?\s*\d{5}-?\d{3}$/, '')

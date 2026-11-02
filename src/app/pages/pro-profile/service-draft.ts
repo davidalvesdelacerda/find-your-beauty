@@ -26,7 +26,7 @@ export type ServiceDraft = Omit<
   duration: string;
 };
 
-export const newId = () => Math.random().toString(36).slice(2, 10);
+const newId = () => Math.random().toString(36).slice(2, 10);
 
 export const newServiceDraft = (): ServiceDraft => ({
   id: newId(),

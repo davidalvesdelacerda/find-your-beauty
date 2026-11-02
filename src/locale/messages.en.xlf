@@ -866,18 +866,6 @@
           <context context-type="linenumber">37,38</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7180045158908201054" datatype="html">
-        <source>Conversar com <x id="INTERPOLATION" equiv-text="{{ artist.name }}"/></source>
-        <target>Chat with <x id="INTERPOLATION" equiv-text="{{ artist.name }}"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/artist-details/artist-details.html</context>
-          <context context-type="linenumber">50,52</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/my-bookings/my-bookings.html</context>
-          <context context-type="linenumber">50</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="5235425694737955656" datatype="html">
         <source><x id="START_BLOCK_IF" equiv-text="@if (artist.serviceMode === &apos;home&apos;) {"/> Atendimento a domicílio <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> <x id="INTERPOLATION" equiv-text="{{ artist.address }}"/> <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/><x id="START_BLOCK_IF_1" equiv-text="@if (artist.serviceMode !== &apos;home&apos; &amp;&amp; artist.address) {"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button
             type=&quot;button&quot;
@@ -1070,14 +1058,6 @@
           <context context-type="linenumber">335,338</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4610197218510224333" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Total<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> (<x id="INTERPOLATION" equiv-text="{{ selectedServices().length }}"/> <x id="START_BLOCK_IF" equiv-text="@if (selectedServices().length === 1) {"/> serviço <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> serviços <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/>) </source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Total<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> (<x id="INTERPOLATION" equiv-text="{{ selectedServices().length }}"/> <x id="START_BLOCK_IF" equiv-text="@if (selectedServices().length === 1) {"/> service <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> services <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/>)</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/artist-details/artist-details.html</context>
-          <context context-type="linenumber">340,343</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="4421536752534012454" datatype="html">
         <source>Agendar</source>
         <target>Book</target>
@@ -1162,14 +1142,6 @@
           <context context-type="linenumber">6,7</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7737661043164193874" datatype="html">
-        <source>com <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ artist.name }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
-        <target>with <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ artist.name }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/booking/booking.html</context>
-          <context context-type="linenumber">10,13</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="146442697456175258" datatype="html">
         <source>Data</source>
         <target>Date</target>
@@ -1208,14 +1180,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/booking/booking.html</context>
           <context context-type="linenumber">68</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="9123341664273923916" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Total<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> (<x id="INTERPOLATION" equiv-text="{{ selectedServices().length }}"/> <x id="START_BLOCK_IF" equiv-text="@if (selectedServices().length === 1) {"/> serviço <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> serviços <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/>)</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Total<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> (<x id="INTERPOLATION" equiv-text="{{ selectedServices().length }}"/> <x id="START_BLOCK_IF" equiv-text="@if (selectedServices().length === 1) {"/> service <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> services <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/>)</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/booking/booking.html</context>
-          <context context-type="linenumber">78,79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8346791740783408128" datatype="html">
@@ -1630,46 +1594,6 @@
           <context context-type="linenumber">18,19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5267539618259084567" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Conta:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> nome, sobrenome, e-mail, celular e CPF. Quem entra com o Google também nos informa nome, e-mail e foto.</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Account:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> first name, last name, email, mobile number and CPF. If you sign in with Google, we also receive your name, email and photo.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
-          <context context-type="linenumber">20,21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4989792701637918688" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Endereço:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> do cliente, para atendimento a domicílio, e do profissional, para aparecer no mapa.</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> the client's, for home visits, and the professional's, to appear on the map.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
-          <context context-type="linenumber">21,22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="9086967480895644964" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Profissionais:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> foto, serviços, preços, horários, galeria de trabalhos e Instagram.</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Professionals:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> photo, services, prices, hours, work gallery and Instagram.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
-          <context context-type="linenumber">22,23</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2685442397092621797" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Uso do app:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> agendamentos, avaliações, mensagens e arquivos enviados no chat.</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Use of the app:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> bookings, reviews, messages and files sent in the chat.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
-          <context context-type="linenumber">23,24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2173769540656827944" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Localização:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> somente se você permitir, para mostrar quem está perto.</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Location:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> only if you allow it, to show who is nearby.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
-          <context context-type="linenumber">24,27</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7936398159103214464" datatype="html">
         <source> O profissional pode conectar a conta profissional do Instagram. Pedimos apenas a permissão de leitura básica (<x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/>instagram_business_basic<x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>). Com ela, lemos o nome de usuário e as 12 fotos mais recentes do feed, copiamos essas fotos para o nosso armazenamento e as mostramos no perfil público do profissional. Guardamos a chave de acesso de forma restrita, sem acesso pelo aplicativo. Não publicamos nada no Instagram e não lemos mensagens. </source>
         <target>The professional can connect their professional Instagram account. We only ask for the basic read permission (<x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/>instagram_business_basic<x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>). With it, we read the username and the 12 most recent photos of the feed, copy those photos to our storage and show them on the professional's public profile. We keep the access key restricted, with no access from the app. We do not post anything on Instagram and we do not read messages.</target>
@@ -1700,14 +1624,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
           <context context-type="linenumber">41,42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6792706095506250385" datatype="html">
-        <source>Enviar avisos por notificação e por e-mail sobre agendamentos, aprovação de cadastro e senha.</source>
-        <target>Sending notices by notification and by email about bookings, registration approval and password.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/privacy.ts</context>
-          <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6878323109012996917" datatype="html">
@@ -1830,22 +1746,6 @@
           <context context-type="linenumber">23,24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7705117673615062230" datatype="html">
-        <source>Profissionais passam por aprovação da nossa equipe antes de aparecerem para os clientes.</source>
-        <target>Professionals are approved by our team before they appear to clients.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/terms.ts</context>
-          <context context-type="linenumber">24,25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2298526368998032961" datatype="html">
-        <source>Podemos suspender contas que descumpram estes termos ou usem o app de forma indevida.</source>
-        <target>We may suspend accounts that break these terms or use the app improperly.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/terms.ts</context>
-          <context context-type="linenumber">25,26</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="4565077147358082177" datatype="html">
         <source>Agendamentos</source>
         <target>Bookings</target>
@@ -1900,22 +1800,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/legal/terms.ts</context>
           <context context-type="linenumber">47,48</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1473720013279956466" datatype="html">
-        <source>Podemos atualizar estes termos. Quando houver mudanças importantes, avisaremos pelo app ou por e-mail.</source>
-        <target>We may update these terms. When there are important changes, we will tell you in the app or by email.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/terms.ts</context>
-          <context context-type="linenumber">48,50</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8633454321560557346" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contato@findyourbeauty.com.br<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Veja também a <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/privacidade&quot;&gt;"/>Política de Privacidade<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contato@findyourbeauty.com.br<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. See also the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/privacidade&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/legal/terms.ts</context>
-          <context context-type="linenumber">51,54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5096065992440929211" datatype="html">
@@ -2222,14 +2106,6 @@
           <context context-type="linenumber">56,57</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6969710404373458411" datatype="html">
-        <source>Você não tem agendamentos. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/explore&quot;&gt;"/>Encontre um profissional<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
-        <target>You have no bookings. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/explore&quot;&gt;"/>Find a professional<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/my-bookings/my-bookings.html</context>
-          <context context-type="linenumber">70,72</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="1653818843477606968" datatype="html">
         <source>Histórico</source>
         <target>History</target>
@@ -2426,22 +2302,6 @@
           <context context-type="linenumber">6,7</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7183335839320987367" datatype="html">
-        <source>Recusar</source>
-        <target>Decline</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/pro-agenda/pro-agenda.html</context>
-          <context context-type="linenumber">33,34</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3375894132545748910" datatype="html">
-        <source>Aceitar</source>
-        <target>Accept</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/pro-agenda/pro-agenda.html</context>
-          <context context-type="linenumber">34,35</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="5706592912813908821" datatype="html">
         <source>Solicitações</source>
         <target>Requests</target>
@@ -2596,14 +2456,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
           <context context-type="linenumber">107,109</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8692651647686096772" datatype="html">
-        <source>Aparece nos cards, no topo da sua página e redonda nas mensagens.</source>
-        <target>Shown on the cards, at the top of your page and round in the messages.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/pro-profile/pro-profile.html</context>
-          <context context-type="linenumber">62,63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4017335136314608045" datatype="html">
@@ -2802,14 +2654,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pro-profile/pro-profile.html</context>
           <context context-type="linenumber">240,241</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4276265675821539261" datatype="html">
-        <source> Busque o endereço e escolha uma sugestão para aparecer no Explorar. </source>
-        <target>Search the address and choose a suggestion to show up in Explore.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/pro-profile/pro-profile.html</context>
-          <context context-type="linenumber">243</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7835699574154627161" datatype="html">
@@ -3538,14 +3382,6 @@
           <context context-type="linenumber">110,111</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3564723067383563370" datatype="html">
-        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;dot&quot;&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Você está logado </source>
-        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;dot&quot;&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> You are signed in</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/profile/profile.html</context>
-          <context context-type="linenumber">115,118</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="4036290205759125095" datatype="html">
         <source>Link inválido,</source>
         <target>Invalid link,</target>
@@ -3568,14 +3404,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/reset-password/reset-password.html</context>
           <context context-type="linenumber">16,17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6119159391756301064" datatype="html">
-        <source>Pronto! Sua senha foi alterada. Agora você já pode entrar com a nova senha.</source>
-        <target>Done! Your password was changed. You can now sign in with the new password.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/reset-password/reset-password.html</context>
-          <context context-type="linenumber">17,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7825024104294801393" datatype="html">
@@ -3980,14 +3808,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/verify-email/verify-email.html</context>
           <context context-type="linenumber">2,3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6215938770033951061" datatype="html">
-        <source>Digite o código de 4 números que enviamos para <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ email() }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>.</source>
-        <target>Enter the 4-digit code we sent to <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ email() }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/verify-email/verify-email.html</context>
-          <context context-type="linenumber">3,5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6874778798684653891" datatype="html">
@@ -4752,14 +4572,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/booking/booking.ts</context>
           <context context-type="linenumber">212</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="9215825974582528354" datatype="html">
-        <source>Os horários apagados coincidem com um agendamento que você já tem.</source>
-        <target>The faded times overlap a booking you already have.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/booking/booking.html</context>
-          <context context-type="linenumber">91,93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2295446303771847424" datatype="html">

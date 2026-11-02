@@ -3,7 +3,7 @@ import { getAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 import { ADMIN, CLIENT, CLIENT2, PASSWORD, PRO, PRO_HOME } from './data';
 
-export const PROJECT_ID = 'demo-find-your-beauty';
+const PROJECT_ID = 'demo-find-your-beauty';
 
 const requireEmulators = () => {
   for (const name of ['FIRESTORE_EMULATOR_HOST', 'FIREBASE_AUTH_EMULATOR_HOST']) {

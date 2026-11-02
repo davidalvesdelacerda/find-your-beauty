@@ -18,7 +18,7 @@ import { PricePipe } from '../../utils/price.pipe';
 import { bookingErrorMessage } from '../booking/booking-request';
 
 // How long the simulated payment takes, so that it feels like one
-export const SIMULATED_PAYMENT_MS = 1200;
+const SIMULATED_PAYMENT_MS = 1200;
 
 // The payment screen of the test environment, between "Finalizar" and the booking itself. With Stripe, the client
 // needs a saved card: "Pagar agora" holds the amount on it (the money is taken when the professional accepts) and

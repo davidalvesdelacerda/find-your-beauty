@@ -6,7 +6,7 @@ import { StripePayments } from './stripe-payments';
 
 type Config = { provider: 'off' | 'stripe' | 'fake'; stripePublishableKey: string };
 
-export const paymentsFor = (config: Config): PaymentsApi =>
+const paymentsFor = (config: Config): PaymentsApi =>
   config.provider === 'fake'
     ? new FakePayments()
     : new StripePayments(config.provider === 'stripe' ? config.stripePublishableKey : '');

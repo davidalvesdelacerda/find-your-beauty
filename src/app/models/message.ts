@@ -26,7 +26,7 @@ export type ChatMessage = {
 // What goes into a new message
 export type MessageContent = Pick<ChatMessage, 'text' | 'image' | 'file'>;
 
-export type TextPart = { text: string; bold?: boolean };
+type TextPart = { text: string; bold?: boolean };
 
 // users/{uid}/notifications/{id}
 export type Notification = {
