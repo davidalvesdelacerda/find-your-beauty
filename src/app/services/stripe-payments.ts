@@ -59,7 +59,7 @@ export class StripePayments implements PaymentsApi {
       appearance: {
         theme: 'stripe',
         variables: {
-          colorPrimary: '#2f6b7a',
+          colorPrimary: '#46586d',
           fontFamily: 'Mulish, sans-serif',
           borderRadius: '14px',
         },

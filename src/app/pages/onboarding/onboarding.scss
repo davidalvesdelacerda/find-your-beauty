@@ -7,7 +7,7 @@
   justify-content: center;
   padding: 2rem 1.5rem;
   color: #fff;
-  background-color: #cfd6da;
+  background-color: #d3d9e0;
   background-size: cover;
   background-position: center top;
   transition: background-image 0.3s;
@@ -86,14 +86,14 @@ h1 {
 
 .google {
   background: #fff;
-  color: var(--teal);
+  color: var(--brand);
 }
 
 .signin {
   margin-top: 0.5rem;
 
   a {
-    color: var(--accent);
+    color: var(--accent-text);
   }
 }
 

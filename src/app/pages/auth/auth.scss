@@ -38,7 +38,7 @@ h1 {
   &:focus-within {
     background: #fff;
     border-color: var(--primary);
-    color: var(--teal);
+    color: var(--brand);
   }
 
   &.invalid {
@@ -166,7 +166,7 @@ h1 {
   gap: 0.75rem;
   border: 1.5px solid var(--primary);
   background: #fff;
-  color: var(--teal);
+  color: var(--brand);
 
   svg {
     width: 1.3rem;
@@ -277,7 +277,7 @@ h1 {
     background: #fff;
   }
 
-  // The professional area keeps its teal
+  // The professional area keeps its blue
   :host-context(.pro-theme) .auth {
     background: transparent;
   }

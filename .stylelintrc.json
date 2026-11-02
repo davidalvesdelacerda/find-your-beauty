@@ -7,7 +7,7 @@
     },
     "declaration-property-value-disallowed-list": {
       "/.*/": [
-        "/#(?!(?:fff|1565c0|245765|2faa5f|6b7280|aab2c0|b42318|b45f06|b4d2da|b5b5b5|c0392b|c3dde3|c4c7cf|c9c9d1|cfd6da|ddd|e1e8ea|e4e6ec|e5eef0|e8e8ee|ececec|ececf1|ee8b2e|f7fafb|f9fafb|fff0f0|fff1e0)\\b)[0-9a-f]{3,8}\\b/i"
+        "/#(?!(?:fff|1565c0|2faa5f|6b7280|aab2c0|b42318|b45f06|c3ccd8|b5b5b5|c0392b|cfd6e0|c4c7cf|c9c9d1|d3d9e0|ddd|e3e7ec|e4e6ec|e6eaf0|e8e8ee|ececec|ececf1|ee8b2e|f7fafb|f9fafb|fff0f0|fff1e0)\\b)[0-9a-f]{3,8}\\b/i"
       ]
     },
     "max-nesting-depth": [

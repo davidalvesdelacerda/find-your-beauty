@@ -48,7 +48,7 @@ select {
   appearance: none;
   -webkit-appearance: none;
   padding-right: 3rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1.5 1.75 7 7.25l5.5-5.5' stroke='%232f6b7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1.5 1.75 7 7.25l5.5-5.5' stroke='%2346586d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1.25rem center;
   background-size: 0.9rem;
@@ -86,7 +86,7 @@ select {
   color: var(--danger);
   cursor: pointer;
 
-  // The red does not read on the teal of the professional area: a light one, underlined so it still says "remove"
+  // The red does not read on the blue of the professional area: a light one, underlined so it still says "remove"
   :host-context(.pro-theme) & {
     color: #fff0f0;
     text-decoration: underline;

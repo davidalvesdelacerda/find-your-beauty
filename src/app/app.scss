@@ -168,9 +168,9 @@ $tabs-height: 5rem;
     padding-bottom: 0;
   }
 
-  // The professional area is teal: the bar follows
+  // The professional area takes the blue of the brand: the bar follows
   :host-context(.pro-theme) .topbar {
-    background: #245765;
+    background: var(--brand-dark);
     box-shadow: none;
 
     .brand img {
@@ -189,7 +189,7 @@ $tabs-height: 5rem;
 
     .signin {
       background: #fff;
-      color: var(--teal);
+      color: var(--brand);
     }
   }
 }

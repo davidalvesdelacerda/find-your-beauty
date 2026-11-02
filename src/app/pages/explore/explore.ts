@@ -98,7 +98,7 @@ export class Explore implements OnInit {
     clickable: false,
   };
   protected readonly ringOptions: google.maps.CircleOptions = {
-    strokeColor: '#ee8b2e',
+    strokeColor: '#a87558',
     strokeWeight: 1,
     fillOpacity: 0,
     clickable: false,
@@ -110,7 +110,7 @@ export class Explore implements OnInit {
       url:
         'data:image/svg+xml;utf8,' +
         encodeURIComponent(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" fill="#ee8b2e" stroke="#fff" stroke-width="4"/></svg>',
+          '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" fill="#a87558" stroke="#fff" stroke-width="4"/></svg>',
         ),
       scaledSize: { width: 28, height: 28, equals: () => false } as google.maps.Size,
       anchor: { x: 14, y: 14, equals: () => false } as google.maps.Point,
@@ -439,7 +439,7 @@ export class Explore implements OnInit {
   }
 
   protected markerIcon(index: number) {
-    return pin(index === this.selected() ? '#ee8b2e' : '#2f6b7a');
+    return pin(index === this.selected() ? '#a87558' : '#46586d');
   }
 
   // Button: asks for the position (the browser prompt only shows if it wasn't decided yet)

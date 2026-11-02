@@ -14,7 +14,7 @@ export const appUrl = defineString('APP_URL', { default: 'https://findyourbeauty
 // "dev" in the test environment: its e-mails say so in the subject. Empty in production.
 const envName = defineString('ENV_NAME', { default: '' });
 
-// The look of the app: white, a big bold title, gray text, round teal buttons and light gray boxes
+// The look of the app: white, a big bold title, gray text, round blue buttons and light gray boxes
 // The languages of the site: the e-mail goes in the language of the page where the action was made
 export { asLang, type Lang } from './shared/domain';
 
@@ -32,7 +32,7 @@ const FOOTER: Record<Lang, string> = {
   es: 'Recibiste este correo porque tienes una cuenta en Find Your Beauty.',
 };
 
-const TEAL = '#2f6b7a';
+const BRAND = '#46586d';
 const TEXT = '#1c1c1c';
 const MUTED = '#6b6b6b';
 const SOFT = '#f1f2f6';
@@ -63,7 +63,7 @@ const render = ({ heading, paragraphs, details, button, lang = 'pt' }: Email) =>
   </head>
   <body style="margin:0;padding:0;background:#ffffff;font-family:${FONT};color:${TEXT};">
     <div style="max-width:30rem;margin:0 auto;padding:32px 24px 40px;">
-      <p style="margin:0 0 36px;"><img src="${appUrl.value()}/logo-full.png" alt="Find Your Beauty" width="190" style="display:block;border:0;height:auto;max-width:190px;font-size:16px;font-weight:800;color:${TEAL};"></p>
+      <p style="margin:0 0 36px;"><img src="${appUrl.value()}/logo-full.png" alt="Find Your Beauty" width="190" style="display:block;border:0;height:auto;max-width:190px;font-size:16px;font-weight:800;color:${BRAND};"></p>
       <h1 style="margin:0 0 12px;font-size:30px;line-height:1.2;font-weight:800;color:${TEXT};">${escape(heading)}</h1>
       ${paragraphs
         .map(
@@ -83,7 +83,7 @@ const render = ({ heading, paragraphs, details, button, lang = 'pt' }: Email) =>
       }
       ${
         button
-          ? `<p style="margin:32px 0 0;"><a href="${escape(button.url)}" style="display:block;background:${TEAL};color:#ffffff;text-decoration:none;text-align:center;padding:17px 24px;border-radius:999px;font-size:16px;font-weight:700;">${escape(button.label)}</a></p>`
+          ? `<p style="margin:32px 0 0;"><a href="${escape(button.url)}" style="display:block;background:${BRAND};color:#ffffff;text-decoration:none;text-align:center;padding:17px 24px;border-radius:999px;font-size:16px;font-weight:700;">${escape(button.label)}</a></p>`
           : ''
       }
       <p style="margin:40px 0 0;font-size:12px;line-height:1.5;color:#9a9aa3;">${FOOTER[lang]}</p>

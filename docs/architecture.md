@@ -97,12 +97,12 @@ Component styles are SCSS (scoped). What is shared lives in two places:
 
 - **Tokens** are CSS variables in `:root` of `src/styles.scss`. `--primary`, `--text`, `--muted` and `--on-primary`
   (the letters on a `--primary` background) are the theme: the professional area (`body.pro-theme`) swaps them. The
-  fixed tokens (`--teal`, `--ink`, `--gray`, `--danger*`, `--border*`, `--surface`, `--divider`, `--success`,
-  `--warning`, `--disabled`, `--shadow-card`, `--radius`, `--radius-pill`) are never changed by a theme.
+  fixed tokens (`--brand`, `--brand-dark`, `--accent-text`, `--ink`, `--gray`, `--danger*`, `--border*`, `--surface`, `--divider`, `--success`,
+  `--warning`, `--disabled`, `--shadow-card`, `--radius`, `--radius-pill`) are never changed by a theme. The palette comes from the logo: slate blue `#46586d` (`--primary`, `--brand`), copper `#a87558` (`--accent`, for fills and icons; `--accent-text` is the darker copper for letters, which has the contrast text needs) and a cool tint of the blue for `--primary-light`.
 - **The professional theme only sets variables.** `body.pro-theme` sets the ones above plus a few the components read
   with a fallback to their own look (`--line`, `--card-bg`, `--bubble-bg`, `--tabbar-bg`, `--error-fg`...), as in
   `border-bottom: 1px solid var(--line, var(--border-soft))`. A component that must look different there reads such
-  a variable; it is never overridden by class name. Text that sits on the teal uses `--teal` (not `--primary`, which
+  a variable; it is never overridden by class name. Text that sits on the teal uses `--brand` (not `--primary`, which
   is white there), and a button's letters use `--on-primary`.
 - **Mixins** are in `src/styles/_breakpoints.scss` (`desktop`, `reduced-motion`). Use them with
   `@use` with the relative path to `src/styles/breakpoints` (for example `@use '../../../styles/breakpoints' as *;`). The path is relative on purpose: Angular, Storybook and Stylelint all resolve it, which a configured include path would not do.
@@ -124,7 +124,7 @@ being added to that list. `src/styles.scss` and `src/styles/_breakpoints.scss` a
 arrows, date range picker, photo viewer, photo positioner, place suggestions, service sheet, location prompt),
 each with its states (empty, loading, long text, selected...). The stories sit next to the component
 (`*.stories.ts`); the data they need is in `components/story-assets.ts`, so they need no Firebase or network. The
-toolbar switches between the light look of the clients and the teal look of the professional area. Only shared
+toolbar switches between the light look of the clients and the blue look of the professional area. Only shared
 components have stories: the pages depend on Firebase and the router.
 
 `npm run build-storybook` writes the static site to `storybook-static/` (git ignores it), and

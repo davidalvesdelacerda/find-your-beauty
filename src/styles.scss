@@ -16,15 +16,19 @@ a {
 }
 
 :root {
-  --primary: #2f6b7a;
-  --primary-light: #e3f4f7;
-  --accent: #ee8b2e;
+  // The palette of the logo: slate blue, copper and a cool tint of the blue
+  --primary: #46586d;
+  --primary-light: #e8edf3;
+  --accent: #a87558;
   --text: #1c1c1c;
   --muted: #6b6b6b;
   --on-primary: #fff;
 
   // Fixed colors of the component styles: the professional theme (`pro-theme`) does not change them
-  --teal: #2f6b7a;
+  --brand: #46586d;
+  --brand-dark: #374555;
+  // Copper as text (the copper of --accent is for fills and icons: it is too light for letters)
+  --accent-text: #8a5c42;
   --ink: #1c1c1c;
   --gray: #6b6b6b;
   --danger: #e5484d;
@@ -48,9 +52,9 @@ body {
   background: #fff;
 }
 
-// Professional area (/pro/*): the teal of the buttons becomes the background and the letters turn white.
+// Professional area (/pro/*): the blue of the buttons becomes the background and the letters turn white.
 // The app toggles `pro-theme` on <body>. It only sets variables: --primary turns white, so everything that used
-// the teal (links, outlines, icons, solid buttons) stays visible, and the components read the variables below
+// the blue (links, outlines, icons, solid buttons) stays visible, and the components read the variables below
 // with a fallback to their own look (`var(--line, var(--border-soft))`), so they work without this theme.
 body.pro-theme {
   --primary: #fff;
@@ -58,8 +62,8 @@ body.pro-theme {
   --text: #fff;
   --muted: rgba(255, 255, 255, 0.92);
 
-  // Text on a solid button: the buttons are white here, so the letters are teal
-  --on-primary: var(--teal);
+  // Text on a solid button: the buttons are white here, so the letters are the blue of the brand
+  --on-primary: var(--brand);
   --error-fg: #ffc9cb;
   --confirmed-fg: #b8f0cf;
 
@@ -77,14 +81,14 @@ body.pro-theme {
   --bubble-bg: rgba(255, 255, 255, 0.16);
   --bubble-fg: #fff;
   --bubble-mine-bg: #fff;
-  --bubble-mine-fg: var(--teal);
+  --bubble-mine-fg: var(--brand);
 
   // Bottom menu
-  --tabbar-bg: #245765;
+  --tabbar-bg: var(--brand-dark);
   --tabbar-shadow: 0 -6px 18px rgba(0, 0, 0, 0.2);
   --tabbar-fg: rgba(255, 255, 255, 0.6);
 
-  background: #2f6b7a;
+  background: var(--brand);
   color: #fff;
 
   a {
@@ -102,8 +106,8 @@ body.pro-theme {
   app-date-range-picker,
   app-photo-positioner,
   .suggestions {
-    --primary: #2f6b7a;
-    --primary-light: #e3f4f7;
+    --primary: #46586d;
+    --primary-light: #e8edf3;
     --text: #1c1c1c;
     --muted: #6b6b6b;
     --on-primary: #fff;
