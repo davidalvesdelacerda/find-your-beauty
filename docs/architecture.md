@@ -102,7 +102,7 @@ Component styles are SCSS (scoped). What is shared lives in two places:
 - **The professional theme only sets variables.** `body.pro-theme` sets the ones above plus a few the components read
   with a fallback to their own look (`--line`, `--card-bg`, `--bubble-bg`, `--tabbar-bg`, `--error-fg`...), as in
   `border-bottom: 1px solid var(--line, var(--border-soft))`. A component that must look different there reads such
-  a variable; it is never overridden by class name. Text that sits on the teal uses `--brand` (not `--primary`, which
+  a variable; it is never overridden by class name. Text that sits on the blue background uses `--brand` (not `--primary`, which
   is white there), and a button's letters use `--on-primary`.
 - **Mixins** are in `src/styles/_breakpoints.scss` (`desktop`, `reduced-motion`). Use them with
   `@use` with the relative path to `src/styles/breakpoints` (for example `@use '../../../styles/breakpoints' as *;`). The path is relative on purpose: Angular, Storybook and Stylelint all resolve it, which a configured include path would not do.
