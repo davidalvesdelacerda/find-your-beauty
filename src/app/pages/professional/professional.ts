@@ -1,4 +1,8 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, effect, inject, input, signal } from '@angular/core';
+import { Professionals } from '../../services/professionals';
+import { Seo } from '../../services/seo';
+import { environment } from '../../../environments/environment';
+import { professionalJsonLd, professionalTitle, SITE_NAME, truncate } from '../../utils/seo';
 import { ArtistDetails } from '../artist-details/artist-details';
 import { Explore } from '../explore/explore';
 
@@ -24,8 +28,32 @@ export class ProfessionalPage {
   readonly id = input.required<string>();
 
   protected readonly wide = signal(false);
+  private readonly professionals = inject(Professionals);
+  private readonly seo = inject(Seo);
 
   constructor() {
+    // The title, the description and the structured data of this professional, once the catalog is there
+    effect(() => {
+      if (this.professionals.status() === 'loading') return;
+      const artist = this.professionals.byId(this.id());
+      const path = `/profissionais/${this.id()}`;
+      if (!artist || artist.published === false) {
+        this.seo.set({ title: $localize`Profissional não encontrado`, path, noindex: true });
+        return;
+      }
+      const category = artist.tags?.[0];
+      this.seo.set({
+        title: professionalTitle(artist, (place) => $localize` em ${place}:place:`),
+        description: truncate(
+          artist.about?.[0] ||
+            $localize`Agende ${category ?? SITE_NAME}:service: com ${artist.name}:name: pelo Find Your Beauty.`,
+        ),
+        image: artist.image,
+        path,
+        jsonLd: professionalJsonLd(artist, `${environment.siteUrl}${path}`),
+      });
+    });
+
     // Follows the width of the window (a phone turned sideways, a window that is resized)
     const query = window.matchMedia('(min-width: 1024px)');
     this.wide.set(query.matches);

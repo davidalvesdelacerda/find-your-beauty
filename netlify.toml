@@ -32,6 +32,17 @@
   to = "/index.html"
   status = 200
 
+# Only the Portuguese site is for the search engines (the other languages are the same pages translated)
+[[headers]]
+  for = "/en/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/es/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 # The service worker and its list of files must always be fresh, or an old version of the app would stay installed
 [[headers]]
   for = "/ngsw-worker.js"

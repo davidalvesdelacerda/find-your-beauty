@@ -88,8 +88,11 @@ test.describe('visitor', () => {
     await expect(page).toHaveURL(/\/pro\/entrar$/);
   });
 
-  test('an unknown address goes to the home', async ({ page }) => {
+  test('an unknown address says so and is kept out of the search engines', async ({ page }) => {
     await page.goto('/nao-existe');
+    await expect(page.getByRole('heading', { name: 'Página não encontrada' })).toBeVisible();
+    await expect(page.locator('meta[name=robots]')).toHaveAttribute('content', 'noindex, nofollow');
+    await page.getByRole('link', { name: 'Voltar ao início' }).click();
     await expect(page).toHaveURL(/\/$/);
   });
 });

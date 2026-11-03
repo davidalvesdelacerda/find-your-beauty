@@ -12,4 +12,9 @@ const result = spawnSync('npm', ['run', script], {
   stdio: 'inherit',
   shell: process.platform === 'win32',
 });
+if (result.status === 0 && production) {
+  // robots.txt and sitemap.xml of the real site (the test site blocks everything, see build:dev)
+  const seo = spawnSync('node', ['scripts/seo-files.cjs'], { stdio: 'inherit' });
+  process.exit(seo.status ?? 1);
+}
 process.exit(result.status ?? 1);

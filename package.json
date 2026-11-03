@@ -19,6 +19,7 @@
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "test:scripts": "node --test scripts/seo-files.test.cjs",
     "test:rules": "firebase emulators:exec --only firestore,storage --project demo-find-your-beauty \"vitest run --config vitest.rules.config.ts rules-tests\"",
     "test:functions": "firebase emulators:exec --only firestore --project demo-find-your-beauty \"vitest run --config vitest.rules.config.ts functions/tests\"",
     "e2e": "node scripts/e2e.cjs",

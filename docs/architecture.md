@@ -118,6 +118,28 @@ token in `src/styles.scss`. `!important` is not used.
 existed (they are allowed as they are); a color used again should become a token in `src/styles.scss` instead of
 being added to that list. `src/styles.scss` and `src/styles/_breakpoints.scss` are exempt.
 
+## SEO
+
+The app renders in the browser, so a search engine reads what the app writes into the head after it starts, plus
+what `src/index.html` already has (description, Open Graph, an image). Only the Portuguese site is for search engines.
+
+- **`Seo` service** (`src/app/services/seo.ts`): sets the title, the description, the preview of the link (Open Graph
+  and Twitter), the canonical address, `robots` and the structured data (JSON-LD). Each route says what it is in
+  `data.seo` (`app.routes.ts`); a route that says nothing is `noindex`. The page of a professional is `dynamic`: it
+  sets its own tags when the catalog is loaded (`pages/professional`), with the helpers of `utils/seo.ts`.
+- **A new public page:** add `data: seo({ title, description, path })` to its route. A page with accounts or bookings
+  gets `noindex: true`, and its path goes in `PRIVATE` of `scripts/seo-files.cjs`.
+- **Environments:** `siteUrl` and `indexable` are in `src/environments`. The test site is not indexable.
+- **`robots.txt` and `sitemap.xml`** are written after the production build (`scripts/seo-files.cjs`, called by
+  `scripts/netlify-build.cjs` on `main`); the sitemap lists the professionals that are published and visible, read
+  from the public catalog. `npm run test:scripts` tests them. The test site writes a `robots.txt` that blocks everything.
+- **`/en` and `/es`** answer with `X-Robots-Tag: noindex` (`netlify.toml`).
+- **Links:** a card on the home links to the professional with a real `<a href>`: a search engine follows an address,
+  not the click on an element.
+- **Not done yet:** the HTML a crawler receives has no content of the page before the script runs, and the previews
+  of WhatsApp and Instagram do not run scripts, so they show the default title and image. Prerendering the public pages
+  would solve both.
+
 ## Storybook
 
 `npm run storybook` shows the shared components of `src/app/components/` (spinner, toast, chips row, carousel

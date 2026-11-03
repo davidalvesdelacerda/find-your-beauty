@@ -3,6 +3,9 @@
 // The values below come from the web app of the dev project (Firebase Console > Project settings > Your apps).
 export const environment = {
   name: 'dev',
+  siteUrl: 'https://dev.findyourbeauty.com.br',
+  // The test site stays out of the search engines (robots.txt blocks it too)
+  indexable: false,
   useEmulators: false,
   // The publishable key (pk_test_...) of the Stripe account in test mode. Public by design. Until it is filled in,
   // the payment screen keeps the simulated payment.

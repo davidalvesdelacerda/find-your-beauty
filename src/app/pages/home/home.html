@@ -96,7 +96,9 @@
               }
             </div>
             <p class="tags">{{ salon.tagList | catalog }}</p>
-            <h3>{{ salon.name }}</h3>
+            <h3>
+              <a class="name" [routerLink]="['/profissionais', salon.id]">{{ salon.name }}</a>
+            </h3>
             <p class="muted">{{ salon.address }}</p>
             <p class="rating">
               <mat-icon class="star filled">star</mat-icon> <strong>{{ salon.rating }}</strong> ({{
@@ -205,7 +207,9 @@
           </div>
           <div class="offer-info">
             <p class="tags">{{ offer.tagList | catalog }}</p>
-            <h3>{{ offer.name }}</h3>
+            <h3>
+              <a class="name" [routerLink]="['/profissionais', offer.id]">{{ offer.name }}</a>
+            </h3>
             <p class="muted">{{ offer.address }}</p>
             <p class="rating">
               <mat-icon class="star filled">star</mat-icon> <strong>{{ offer.rating }}</strong> ({{

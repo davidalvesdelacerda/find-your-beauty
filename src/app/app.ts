@@ -6,6 +6,7 @@ import { Auth } from './services/auth';
 import { Messages } from './services/messages';
 import { Notifications } from './services/notifications';
 import { Feedback } from './services/feedback';
+import { Seo } from './services/seo';
 import { Toast } from './components/toast/toast';
 import { environment } from '../environments/environment';
 
@@ -59,6 +60,7 @@ export class App {
   private readonly notifications = inject(Notifications);
   protected readonly feedback = inject(Feedback);
   protected readonly auth = inject(Auth);
+  private readonly seo = inject(Seo);
 
   private readonly clientTabs: Tab[] = [
     {
@@ -132,7 +134,10 @@ export class App {
     this.setUrl(this.pathOf(router.url));
     router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe((event) => this.setUrl(this.pathOf(event.urlAfterRedirects)));
+      .subscribe((event) => {
+        this.setUrl(this.pathOf(event.urlAfterRedirects));
+        this.seo.fromRoute(router.routerState.snapshot.root);
+      });
   }
 
   protected get tabs() {

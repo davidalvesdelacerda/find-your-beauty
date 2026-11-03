@@ -4966,6 +4966,114 @@
           <context context-type="linenumber">177</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1859085176889624156" datatype="html">
+        <source>Maquiagem e cabelo perto de você</source>
+        <target>Makeup and hair near you</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4501557126174484053" datatype="html">
+        <source>Mapa de profissionais de beleza</source>
+        <target>Map of beauty professionals</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8381609758727187964" datatype="html">
+        <source>Veja no mapa os profissionais de maquiagem e cabelo mais perto de você.</source>
+        <target>See on the map the makeup and hair professionals closest to you.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6566786094026291547" datatype="html">
+        <source>Profissional de beleza</source>
+        <target>Beauty professional</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1985840500813727418" datatype="html">
+        <source>Buscar profissionais de maquiagem e cabelo</source>
+        <target>Search makeup and hair professionals</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3458634705438323705" datatype="html">
+        <source>Busque profissionais de maquiagem e cabelo pelo nome, pelo serviço ou pelo preço e agende online.</source>
+        <target>Search makeup and hair professionals by name, service or price and book online.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3621976955062663862" datatype="html">
+        <source>Página não encontrada</source>
+        <target>Page not found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.ts</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2469890363683151661" datatype="html">
+        <source>O endereço não existe ou foi movido.</source>
+        <target>The address does not exist or was moved.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.ts</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6474839422815024232" datatype="html">
+        <source>Voltar ao início</source>
+        <target>Back to the start</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.ts</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6380253085042920727" datatype="html">
+        <source>Profissional não encontrado</source>
+        <target>Professional not found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/professional/professional.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6607499310350745129" datatype="html">
+        <source> em <x id="place" equiv-text="place"/></source>
+        <target> in <x id="place" equiv-text="place"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/professional/professional.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5616752158752818445" datatype="html">
+        <source>Agende <x id="service" equiv-text="category ?? SITE_NAME"/> com <x id="name" equiv-text="artist.name"/> pelo Find Your Beauty.</source>
+        <target>Book <x id="service" equiv-text="category ?? SITE_NAME"/> with <x id="name" equiv-text="artist.name"/> on Find Your Beauty.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/professional/professional.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4916627136265506581" datatype="html">
+        <source>Encontre profissionais de maquiagem e cabelo perto de você, veja as avaliações e agende o seu horário.</source>
+        <target>Find makeup and hair professionals near you, see the reviews and book your time.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/seo.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

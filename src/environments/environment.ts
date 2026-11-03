@@ -2,6 +2,9 @@
 // takes the place of this file in the `dev` build.
 export const environment = {
   name: 'prod',
+  // The address the site is known by (canonical links, social previews) and whether search engines may index it
+  siteUrl: 'https://findyourbeauty.com.br',
+  indexable: true,
   // Only the end to end tests connect to the local Firebase emulators (environment.e2e.ts)
   useEmulators: false,
   // Payments with Stripe: only the test environment has them (see services/payments.ts)

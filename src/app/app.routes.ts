@@ -5,18 +5,36 @@ import { checkoutGuard } from './guards/checkout';
 import { clientAreaGuard, clientEntryGuard, clientGuard } from './guards/client';
 import { proEntryGuard, proGuard } from './guards/pro';
 import { PATHS } from './utils/paths';
+import { RouteSeo } from './services/seo';
+import { environment } from '../environments/environment';
+import { organizationJsonLd, websiteJsonLd } from './utils/seo';
+
+// What each route says to the search engines (see services/seo.ts). A route that says nothing is left out of them.
+const seo = (page: RouteSeo) => ({ seo: page });
 
 export const routes: Routes = [
   {
     path: '',
+    data: seo({
+      title: $localize`Maquiagem e cabelo perto de você`,
+      path: '/',
+      jsonLd: [organizationJsonLd(environment.siteUrl), websiteJsonLd(environment.siteUrl)],
+    }),
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
   {
     path: 'explore',
+    data: seo({
+      title: $localize`Mapa de profissionais de beleza`,
+      description: $localize`Veja no mapa os profissionais de maquiagem e cabelo mais perto de você.`,
+      path: '/explore',
+    }),
     loadComponent: () => import('./pages/explore/explore').then((m) => m.Explore),
   },
   {
     path: 'profissionais/:id',
+    // The page sets its own title when the professional is loaded (see pages/professional)
+    data: seo({ title: $localize`Profissional de beleza`, dynamic: true }),
     loadComponent: () =>
       import('./pages/professional/professional').then((m) => m.ProfessionalPage),
   },
@@ -41,10 +59,12 @@ export const routes: Routes = [
   },
   {
     path: 'privacidade',
+    data: seo({ title: $localize`Política de Privacidade`, path: '/privacidade' }),
     loadComponent: () => import('./pages/legal/privacy').then((m) => m.Privacy),
   },
   {
     path: 'termos',
+    data: seo({ title: $localize`Termos de Uso`, path: '/termos' }),
     loadComponent: () => import('./pages/legal/terms').then((m) => m.Terms),
   },
   {
@@ -54,6 +74,7 @@ export const routes: Routes = [
   {
     path: 'entrar',
     canActivate: [clientEntryGuard],
+    data: seo({ title: $localize`Entrar`, noindex: true }),
     loadComponent: () => import('./pages/login/login').then((m) => m.Login),
   },
   {
@@ -64,18 +85,27 @@ export const routes: Routes = [
   {
     path: 'mensagens',
     canActivate: [clientAreaGuard],
-    data: { tab: 'mensagens', proPath: PATHS.proMessages },
+    data: {
+      tab: 'mensagens',
+      proPath: PATHS.proMessages,
+      ...seo({ title: $localize`Mensagens`, noindex: true }),
+    },
     loadComponent: () => import('./pages/inbox/inbox').then((m) => m.Inbox),
   },
   {
     path: 'agenda',
     canActivate: [clientAreaGuard],
+    data: seo({ title: $localize`Agenda`, noindex: true }),
     loadComponent: () => import('./pages/my-bookings/my-bookings').then((m) => m.MyBookings),
   },
   {
     path: 'notificacoes',
     canActivate: [clientAreaGuard],
-    data: { tab: 'notificacoes', proPath: PATHS.proNotifications },
+    data: {
+      tab: 'notificacoes',
+      proPath: PATHS.proNotifications,
+      ...seo({ title: $localize`Notificações`, noindex: true }),
+    },
     loadComponent: () => import('./pages/inbox/inbox').then((m) => m.Inbox),
   },
   {
@@ -92,7 +122,7 @@ export const routes: Routes = [
   {
     path: 'perfil',
     canActivate: [clientAreaGuard],
-    data: { proPath: PATHS.proProfile },
+    data: { proPath: PATHS.proProfile, ...seo({ title: $localize`Perfil`, noindex: true }) },
     loadComponent: () => import('./pages/profile/profile').then((m) => m.Profile),
   },
   {
@@ -103,6 +133,11 @@ export const routes: Routes = [
   },
   {
     path: 'busca',
+    data: seo({
+      title: $localize`Buscar profissionais de maquiagem e cabelo`,
+      description: $localize`Busque profissionais de maquiagem e cabelo pelo nome, pelo serviço ou pelo preço e agende online.`,
+      path: '/busca',
+    }),
     loadComponent: () => import('./pages/search/search').then((m) => m.Search),
   },
   {
@@ -162,5 +197,9 @@ export const routes: Routes = [
     canActivate: [proGuard],
     loadComponent: () => import('./pages/pro-profile/pro-profile').then((m) => m.ProProfile),
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: '**',
+    data: seo({ title: $localize`Página não encontrada`, noindex: true }),
+    loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
+  },
 ];

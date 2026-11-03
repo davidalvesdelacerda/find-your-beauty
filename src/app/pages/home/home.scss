@@ -453,3 +453,9 @@ a {
     padding: 6px 0;
   }
 }
+
+// The name of a card is a real link: it looks like the title, and the whole card keeps opening the page
+.name {
+  color: inherit;
+  text-decoration: none;
+}
