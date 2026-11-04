@@ -22,6 +22,29 @@ h1 {
 .subtitle {
   color: var(--muted);
   margin-bottom: 1.5rem;
+
+  // The notice of the site being free comes right after it
+  &:has(+ .free) {
+    margin-bottom: 0;
+  }
+}
+
+// "100% gratuito": a small pill under the subtitle, in the colors of the theme (it turns light in the professional area)
+.free {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  // A decorative star: the empty text after the slash keeps it out of the screen readers
+  &::before {
+    content: '✦' / '';
+    margin-right: 0.4rem;
+  }
 }
 
 .field {

@@ -682,7 +682,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/profile/profile.html</context>
@@ -690,7 +690,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3781438632710432904" datatype="html">
@@ -705,7 +705,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5392932170099216623" datatype="html">
@@ -720,7 +720,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">111</context>
+          <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3080109816219994129" datatype="html">
@@ -760,7 +760,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">128,129</context>
+          <context context-type="linenumber">129,130</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5489968893403305908" datatype="html">
@@ -1793,11 +1793,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">46,49</context>
+          <context context-type="linenumber">47,50</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">85,87</context>
+          <context context-type="linenumber">86,88</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/utils/validators.ts</context>
@@ -2263,25 +2263,36 @@
         <source><x id="START_BLOCK_IF" equiv-text="@if (pro()) {"/> Entre para gerenciar sua agenda e seus clientes. <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Que bom te ver de novo! Entre para usar o app. <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">28,35</context>
+          <context context-type="linenumber">28,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4379547527230427023" datatype="html">
+        <source>O Find Your Beauty é 100% gratuito.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
+          <context context-type="linenumber">47,49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="150555469217751648" datatype="html">
         <source>Senha</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">56</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
       <trans-unit id="948873154596836353" datatype="html">
         <source>Mostrar senha</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">62,63</context>
+          <context context-type="linenumber">63,64</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/reset-password/reset-password.html</context>
@@ -2289,46 +2300,46 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">168,169</context>
+          <context context-type="linenumber">169,170</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1201146719078115387" datatype="html">
         <source>Digite sua senha.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">69,72</context>
+          <context context-type="linenumber">70,73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8939393979350910457" datatype="html">
         <source><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;checkbox&quot; formControlName=&quot;rememberMe&quot; /&gt;"/> Lembrar de mim </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">74,76</context>
+          <context context-type="linenumber">75,77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2065284140798559983" datatype="html">
         <source>Esqueceu a senha?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">77,78</context>
+          <context context-type="linenumber">78,79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6672058223910566391" datatype="html">
         <source><x id="START_BLOCK_IF" equiv-text="@if (submitting()) {"/> Aguarde... <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Entrar <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">85,92</context>
+          <context context-type="linenumber">86,93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1534155701917252037" datatype="html">
         <source>ou</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">192</context>
+          <context context-type="linenumber">193</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6581758706233668922" datatype="html">
@@ -2359,7 +2370,7 @@
       /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Entrar com Google </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">95,115</context>
+          <context context-type="linenumber">96,116</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/onboarding/onboarding.html</context>
@@ -2370,18 +2381,18 @@
         <source>Não tem uma conta? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/pro/cadastro&quot;&gt;"/>Cadastre-se<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">120,121</context>
+          <context context-type="linenumber">121,122</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">122,123</context>
+          <context context-type="linenumber">123,124</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8625267338605839089" datatype="html">
         <source>Continuar como visitante</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/login/login.html</context>
-          <context context-type="linenumber">123,125</context>
+          <context context-type="linenumber">124,126</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/onboarding/onboarding.html</context>
@@ -2603,11 +2614,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">223,224</context>
+          <context context-type="linenumber">224,225</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">225,227</context>
+          <context context-type="linenumber">226,228</context>
         </context-group>
       </trans-unit>
       <trans-unit id="488426866886794504" datatype="html">
@@ -3014,7 +3025,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">118,120</context>
+          <context context-type="linenumber">119,121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5803658292696077025" datatype="html">
@@ -3658,7 +3669,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">58,60</context>
+          <context context-type="linenumber">59,61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8113267482909686545" datatype="html">
@@ -3681,7 +3692,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">71,73</context>
+          <context context-type="linenumber">72,74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2228283679268173855" datatype="html">
@@ -3707,7 +3718,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">102,104</context>
+          <context context-type="linenumber">103,105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9220417775608893363" datatype="html">
@@ -3718,7 +3729,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">151,152</context>
+          <context context-type="linenumber">152,153</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3527602731975699559" datatype="html">
@@ -3743,7 +3754,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8521516449799108712" datatype="html">
@@ -3754,7 +3765,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">66,67</context>
+          <context context-type="linenumber">67,68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1817816073195954519" datatype="html">
@@ -4102,14 +4113,14 @@
         <source><x id="START_BLOCK_IF" equiv-text="@if (pro()) {"/> Crie a conta do profissional. No próximo passo você completa o perfil: foto, endereço e serviços. <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Preencha todas as informações abaixo para criar sua conta. <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">40,48</context>
+          <context context-type="linenumber">40,47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3776919854644219868" datatype="html">
         <source><x id="START_BLOCK_IF" equiv-text="@if (submitting()) {"/> Aguarde... <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Cadastrar <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">183,190</context>
+          <context context-type="linenumber">184,191</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7322523360265413453" datatype="html">
@@ -4140,14 +4151,14 @@
         /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Cadastrar com Google </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">193,213</context>
+          <context context-type="linenumber">194,214</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8120282675391541837" datatype="html">
         <source> Ao criar a conta você concorda com os <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/termos&quot;&gt;"/>Termos de Uso<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> e a <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/privacidade&quot;&gt;"/>Política de Privacidade<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/signup/signup.html</context>
-          <context context-type="linenumber">218,222</context>
+          <context context-type="linenumber">219,223</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1351072076302892875" datatype="html">
