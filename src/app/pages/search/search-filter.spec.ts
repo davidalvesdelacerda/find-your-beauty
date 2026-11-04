@@ -255,3 +255,24 @@ describe('suggestions', () => {
     expect(names(list)[0]).toBe('R1');
   });
 });
+
+describe('search by place of service', () => {
+  const studio = pro({ serviceMode: 'studio' });
+  const home = pro({ serviceMode: 'home', address: '' });
+  const both = pro({ serviceMode: 'both' });
+  const names = (filters: Partial<ReturnType<typeof noFilters>>) =>
+    search([studio, home, both], '', { ...noFilters(), ...filters }, null).map((c) => c.id);
+
+  it('keeps who goes to the client', () => {
+    expect(names({ home: true })).toEqual([home.id, both.id]);
+  });
+
+  it('keeps who has a studio', () => {
+    expect(names({ studio: true })).toEqual([studio.id, both.id]);
+  });
+
+  it('keeps only who does both when both are on', () => {
+    expect(names({ home: true, studio: true })).toEqual([both.id]);
+    expect(countFilters({ ...noFilters(), home: true, studio: true })).toBe(2);
+  });
+});

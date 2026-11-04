@@ -20,6 +20,9 @@ export type Filters = {
   sort: SortKey | null;
   // A neighborhood of the city of Rio de Janeiro
   neighborhood: string | null;
+  // Only who goes to the client / who has a studio (both on: who does both)
+  home: boolean;
+  studio: boolean;
 };
 
 export type Point = { lat: number; lng: number };
@@ -33,6 +36,8 @@ export const noFilters = (): Filters => ({
   maxKm: MAX_KM,
   sort: null,
   neighborhood: null,
+  home: false,
+  studio: false,
 });
 
 // Compares text ignoring case and accents
@@ -68,8 +73,19 @@ export const neighborhoodsWith = (addresses: string[]) => {
   );
 };
 
-export const countFilters = ({ date, tags, minRating, maxKm, sort, neighborhood }: Filters) =>
+export const countFilters = ({
+  date,
+  tags,
+  minRating,
+  maxKm,
+  sort,
+  neighborhood,
+  home,
+  studio,
+}: Filters) =>
   (neighborhood ? 1 : 0) +
+  (home ? 1 : 0) +
+  (studio ? 1 : 0) +
   (date ? 1 : 0) +
   (tags.length ? 1 : 0) +
   (minRating ? 1 : 0) +
@@ -98,6 +114,11 @@ export const toCard = (professional: Professional, user: Point | null) => {
 
 export type Card = ReturnType<typeof toCard>;
 
+// A professional without a chosen mode has a studio, like everywhere else (see hasLocation)
+export const goesToClient = (p: Pick<Professional, 'serviceMode'>) =>
+  p.serviceMode === 'home' || p.serviceMode === 'both';
+export const hasStudio = (p: Pick<Professional, 'serviceMode'>) => p.serviceMode !== 'home';
+
 // The professionals that pass the text and the filters, as cards, in the chosen order
 export const search = (
   professionals: Professional[],
@@ -106,12 +127,14 @@ export const search = (
   user: Point | null,
 ): Card[] => {
   const text = normalize(term.trim());
-  const { date, tags, minRating, maxKm, sort, neighborhood } = filters;
+  const { date, tags, minRating, maxKm, sort, neighborhood, home, studio } = filters;
 
   const found = professionals
     .filter((professional) => {
       if (text && !matchesText(professional, text)) return false;
       if (neighborhood && !inNeighborhood(professional.address, neighborhood)) return false;
+      if (home && !goesToClient(professional)) return false;
+      if (studio && !hasStudio(professional)) return false;
       if (tags.length && !professional.tags.some((tag) => tags.includes(tag))) return false;
       if (professional.rating < minRating) return false;
       if (date && !isWorkingDay(date, professional.availability ?? DEFAULT_AVAILABILITY))

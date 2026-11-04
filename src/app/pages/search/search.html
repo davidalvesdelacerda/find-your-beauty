@@ -263,6 +263,30 @@
         }
       </div>
 
+      <h2 i18n>Atendimento</h2>
+      <div class="chips">
+        <button
+          i18n
+          type="button"
+          class="filter-chip"
+          [class.active]="draft.home"
+          [attr.aria-pressed]="draft.home"
+          (click)="draft.home = !draft.home"
+        >
+          A domicílio
+        </button>
+        <button
+          i18n
+          type="button"
+          class="filter-chip"
+          [class.active]="draft.studio"
+          [attr.aria-pressed]="draft.studio"
+          (click)="draft.studio = !draft.studio"
+        >
+          No estúdio
+        </button>
+      </div>
+
       <h2 i18n>Avaliação</h2>
       <div class="rating-filter">
         <div class="stars">
