@@ -1,4 +1,5 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { collection, getDocs, onSnapshot, query, where } from 'firebase/firestore';
 import { professionalConverter } from '../models/converters';
 import { Professional } from '../models/professional';
@@ -18,6 +19,8 @@ export class Professionals {
   readonly status = signal<'loading' | 'ready' | 'error'>('loading');
 
   constructor() {
+    // The build prerenders some pages in Node: no reading of the database there (the browser loads the catalog)
+    if (isPlatformServer(inject(PLATFORM_ID))) return;
     this.load();
     // The catalog follows the database: a profile that is approved or published shows up for everyone right away
     onSnapshot(

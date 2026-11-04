@@ -35,6 +35,8 @@
           },
           "configurations": {
             "production": {
+              "server": "src/main.server.ts",
+              "outputMode": "static",
               "serviceWorker": "ngsw-config.json",
               "budgets": [
                 {
@@ -52,6 +54,8 @@
               "localize": true
             },
             "dev": {
+              "server": "src/main.server.ts",
+              "outputMode": "static",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

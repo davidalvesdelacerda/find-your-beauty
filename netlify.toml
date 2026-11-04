@@ -16,20 +16,22 @@
   SECRETS_SCAN_SMART_DETECTION_OMIT_VALUES = "AIzaSyB41b9p2_dNiCulzT_jafIeindOFuDcI-I,AIzaSyBGcq0sRf1RW7h4v9M-ZU-hR2RYstQnUzM,AIzaSyBwamplQdQ7d2BYMuD56DfVigkO1fuSpEw"
 
 # The app is a single page app, built once per language: Portuguese at the root, English under /en and Spanish under /es.
-# Every route of a language is served by the index.html of that language (the order matters: the first match wins)
+# Every route of a language is served by the index.csr.html of that language, the empty shell of the app. The pages that
+# are prerendered (the home, the terms and the privacy policy) are files of their own, and a file wins over a redirect.
+# (the order matters: the first match wins)
 [[redirects]]
   from = "/en/*"
-  to = "/en/index.html"
+  to = "/en/index.csr.html"
   status = 200
 
 [[redirects]]
   from = "/es/*"
-  to = "/es/index.html"
+  to = "/es/index.csr.html"
   status = 200
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/index.csr.html"
   status = 200
 
 # Only the Portuguese site is for the search engines (the other languages are the same pages translated)

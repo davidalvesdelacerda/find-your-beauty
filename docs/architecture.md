@@ -136,9 +136,17 @@ what `src/index.html` already has (description, Open Graph, an image). Only the 
 - **`/en` and `/es`** answer with `X-Robots-Tag: noindex` (`netlify.toml`).
 - **Links:** a card on the home links to the professional with a real `<a href>`: a search engine follows an address,
   not the click on an element.
-- **Not done yet:** the HTML a crawler receives has no content of the page before the script runs, and the previews
-  of WhatsApp and Instagram do not run scripts, so they show the default title and image. Prerendering the public pages
-  would solve both.
+- **Prerender:** the home, the terms and the privacy policy are written as HTML at build time
+  (`app.routes.server.ts`, `outputMode: 'static'` in the `production` and `dev` builds only), so a crawler receives
+  their text, title and structured data before any script runs; the app takes the page over with hydration. Every other
+  route (the map, the accounts, the page of a professional) starts from `index.csr.html`, the empty shell, which is what
+  `netlify.toml` serves for any address that is not a file. The build runs the app in Node: use `DOCUMENT` and
+  `isPlatformBrowser`, not `document` and `window`, in what these pages touch, and do not read Firebase while
+  prerendering (see `Professionals`). `npm run check:seo` (in the CI) opens the build and checks the HTML of these pages.
+  The `e2e` and `development` builds are not prerendered.
+- **Not done yet:** the page of each professional is not prerendered (the catalog is read in the browser), so the
+  previews of WhatsApp and Instagram show the default title and image for them. It needs the professionals read at
+  build time and a new build when one is approved.
 
 ## Storybook
 

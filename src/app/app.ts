@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Component, signal, inject } from '@angular/core';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
@@ -61,6 +62,7 @@ export class App {
   protected readonly feedback = inject(Feedback);
   protected readonly auth = inject(Auth);
   private readonly seo = inject(Seo);
+  private readonly document = inject(DOCUMENT);
 
   private readonly clientTabs: Tab[] = [
     {
@@ -202,7 +204,7 @@ export class App {
   private setUrl(url: string) {
     this.url.set(url);
     // The professional area has its own look (see styles.scss)
-    document.body.classList.toggle('pro-theme', isProArea(url));
+    this.document.body.classList.toggle('pro-theme', isProArea(url));
     if (TAB_SCREENS.includes(url)) this.lastTab.set(url);
   }
 

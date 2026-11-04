@@ -40,6 +40,8 @@ jobs:
         run: npm run test:scripts
       - name: Build (production)
         run: npm run build
+      - name: The prerendered pages have their HTML and tags
+        run: npm run check:seo
       - name: Build (test environment)
         run: npm run build:dev
 
