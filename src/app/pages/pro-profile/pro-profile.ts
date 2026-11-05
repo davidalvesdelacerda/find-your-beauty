@@ -485,11 +485,15 @@ export class ProProfile {
     }
   }
 
+  // The navigation waits for the sign out: while the account is still signed in, the guard of the login
+  // sends a professional back to the agenda
   protected signOut() {
-    this.router.navigateByUrl(PATHS.proLogin);
     this.auth
       .signOut()
-      .then(() => this.feedback.show($localize`Você saiu da conta`))
+      .then(() => {
+        this.router.navigateByUrl(PATHS.proLogin);
+        this.feedback.show($localize`Você saiu da conta`);
+      })
       .catch((error) => log.error('Sign out failed', error));
   }
 }

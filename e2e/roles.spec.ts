@@ -50,3 +50,12 @@ test.describe('a professional does not get into the area of the client', () => {
     }
   });
 });
+
+test.describe('a professional who signs out', () => {
+  test('lands on the login of the professional area', async ({ page }) => {
+    await signIn(page, PRO.email, 'professional');
+    await page.goto('/pro/perfil');
+    await page.getByRole('button', { name: 'Sair' }).click();
+    await expect(page).toHaveURL(/\/pro\/entrar$/);
+  });
+});
