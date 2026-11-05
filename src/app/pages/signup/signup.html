@@ -133,6 +133,7 @@
             aria-controls="place-suggestions"
             [attr.aria-expanded]="place.open() && place.suggestions().length > 0"
             [ngModel]="place.value"
+            [ngModelOptions]="{ standalone: true }"
             (ngModelChange)="place.input($event)"
             (focus)="place.open.set(true)"
             (blur)="place.close(); touchAddress()"

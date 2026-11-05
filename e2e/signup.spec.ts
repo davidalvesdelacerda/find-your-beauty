@@ -24,6 +24,15 @@ test.describe('signup form', () => {
     await expect(page).toHaveURL(/\/cadastro$/);
   });
 
+  test('the address field takes typing without an error in the page', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.goto('/cadastro');
+    await page.getByPlaceholder('Endereço').pressSequentially('Rua das Flores');
+    await expect(page.getByPlaceholder('Endereço')).toHaveValue('Rua das Flores');
+    expect(errors).toEqual([]);
+  });
+
   test('masks the phone and the CPF while typing, dropping extra digits', async ({ page }) => {
     await page.goto('/cadastro');
     await page.getByPlaceholder('Celular').pressSequentially('219974728789999');
