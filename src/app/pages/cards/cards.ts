@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { CardBrand } from '../../components/card-brand/card-brand';
 import { CardForm } from '../../components/card-form/card-form';
 import { Spinner } from '../../components/spinner/spinner';
 import { Cards } from '../../services/cards';
@@ -12,7 +13,7 @@ import { cardBrandLabel } from '../../utils/payment-errors';
 // The cards of the client. Opened from the payment screen (`escolher`), tapping a card chooses it and goes back.
 @Component({
   selector: 'app-cards',
-  imports: [CardForm, MatIconModule, Spinner],
+  imports: [CardBrand, CardForm, MatIconModule, Spinner],
   templateUrl: './cards.html',
   styleUrl: './cards.scss',
 })

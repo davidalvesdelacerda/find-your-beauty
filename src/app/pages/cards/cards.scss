@@ -89,22 +89,6 @@
   color: var(--primary);
 }
 
-.brand {
-  display: flex;
-
-  i {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background: var(--primary);
-
-    & + i {
-      margin-left: -0.55rem;
-      background: var(--accent);
-    }
-  }
-}
-
 .remove {
   flex: none;
   width: 2.5rem;

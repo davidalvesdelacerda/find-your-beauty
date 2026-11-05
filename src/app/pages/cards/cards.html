@@ -19,7 +19,7 @@
       @for (card of cards.list(); track card.id) {
         <li class="card" [class.selected]="cards.selected()?.id === card.id">
           <button type="button" class="pick" (click)="choose(card)">
-            <span class="brand" aria-hidden="true"><i></i><i></i></span>
+            <app-card-brand [brand]="card.brand" />
             <span class="info">
               <strong>{{ brandLabel(card.brand) }} •••• {{ card.last4 }}</strong>
               <span i18n class="muted">Vence {{ card.expMonth }}/{{ card.expYear }}</span>
