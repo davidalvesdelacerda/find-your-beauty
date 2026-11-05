@@ -624,6 +624,45 @@ export const onProfessionalReviewed = onDocumentUpdated(
   },
 );
 
+// A professional finished the sign up and waits for an admin: tells every admin (users with `admin: true`)
+const waitsForReview = (data: FirebaseFirestore.DocumentData | undefined) =>
+  data?.['approved'] === false && data['submitted'] === true && data['rejected'] !== true;
+
+export const onProfessionalSubmitted = onDocumentUpdated(
+  { document: 'professionals/{uid}', secrets: [resendKey] },
+  async (event) => {
+    const before = event.data?.before.data();
+    const after = event.data?.after.data();
+    // Only when it starts to wait (a first submission, or a denied one sent again), not on every edit
+    if (!after || waitsForReview(before) || !waitsForReview(after)) return;
+
+    const admins = await db.collection('users').where('admin', '==', true).get();
+    const name = String(after['name'] ?? '').trim() || 'Sem nome';
+    const results = await Promise.allSettled(
+      admins.docs.map(async (admin) => {
+        const to = await emailOf(admin.id);
+        if (!to) return;
+        await sendEmail({
+          to,
+          lang: 'pt',
+          subject: `Cadastro aguardando análise: ${name}`,
+          heading: 'Um cadastro espera análise',
+          paragraphs: [
+            `${name} terminou o cadastro profissional e está esperando a sua aprovação.`,
+          ],
+          button: {
+            label: 'Revisar o cadastro',
+            url: link('pt', `/admin/profissionais/${event.params.uid}`),
+          },
+        });
+      }),
+    );
+    for (const result of results) {
+      if (result.status === 'rejected') logger.error('Admin e-mail failed', result.reason);
+    }
+  },
+);
+
 const tooMany = (lang: Lang) =>
   L(lang, {
     pt: 'Muitas tentativas. Tente novamente mais tarde.',
