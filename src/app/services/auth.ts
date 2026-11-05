@@ -88,8 +88,15 @@ export class Auth {
     return this.role() === 'professional' ? PATHS.proHome : PATHS.home;
   }
 
-  // Stay signed in after closing the browser (default), or only until the tab is closed
+  // Firebase starts every page load with persistence "local" (stay signed in)
+  private remembered = true;
+
+  // Stay signed in after closing the browser (default), or only until the tab is closed.
+  // When nothing changes it must not wait for the browser's storage: Safari on the iPhone blocks the Google popup
+  // when it is opened after a real wait (it has to open in the same task as the click).
   private remember(remember: boolean) {
+    if (remember === this.remembered) return Promise.resolve();
+    this.remembered = remember;
     return setPersistence(
       this.auth,
       remember ? browserLocalPersistence : browserSessionPersistence,
