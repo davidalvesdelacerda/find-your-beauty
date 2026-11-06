@@ -135,7 +135,7 @@
         </p>
         <p i18n>
           <mat-icon>visibility</mat-icon>
-          {{ artist.views }} visualizações
+          {{ artist.views }} {{ artist.views | viewsLabel }}
         </p>
         <p>
           <mat-icon class="star filled">star</mat-icon> <strong>{{ artist.rating }}</strong> ({{

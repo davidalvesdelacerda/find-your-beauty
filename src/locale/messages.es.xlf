@@ -902,12 +902,28 @@
           <context context-type="linenumber">94,96</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7985369427442370304" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>visibility<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> <x id="INTERPOLATION" equiv-text="{{ artist.views }}"/> visualizações </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>visibility<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> <x id="INTERPOLATION" equiv-text="{{ artist.views }}"/> visualizaciones</target>
+      <trans-unit id="818763902588259790" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>visibility<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> <x id="INTERPOLATION" equiv-text="{{ artist.views }}"/> <x id="INTERPOLATION_1" equiv-text="{{ artist.views | viewsLabel }}"/> </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>visibility<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> <x id="INTERPOLATION" equiv-text="{{ artist.views }}"/> <x id="INTERPOLATION_1" equiv-text="{{ artist.views | viewsLabel }}"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/artist-details/artist-details.html</context>
-          <context context-type="linenumber">98,101</context>
+          <context context-type="linenumber">137,140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8429355662204253013" datatype="html">
+        <source>visualização</source>
+        <target>visualización</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utils/views-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8378080492509442602" datatype="html">
+        <source>visualizações</source>
+        <target>visualizaciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/utils/views-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7523045252145636647" datatype="html">

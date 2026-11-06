@@ -13,6 +13,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { FocusPipe } from '../../utils/focus.pipe';
 import { ReviewsLabelPipe } from '../../utils/reviews-label.pipe';
+import { ViewsLabelPipe } from '../../utils/views-label.pipe';
 import { roundMoney } from '../../utils/money';
 import { PricePipe } from '../../utils/price.pipe';
 import { Spinner } from '../../components/spinner/spinner';
@@ -58,6 +59,7 @@ import { PATHS } from '../../utils/paths';
     ServiceSheet,
     Toast,
     ReviewsLabelPipe,
+    ViewsLabelPipe,
     FormsModule,
     FocusPipe,
     PricePipe,
