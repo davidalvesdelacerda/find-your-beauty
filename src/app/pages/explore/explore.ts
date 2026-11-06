@@ -22,6 +22,7 @@ import { Favorites } from '../../services/favorites';
 import { Feedback } from '../../services/feedback';
 import { GoogleMapsLoader } from '../../services/google-maps-loader';
 import { Professionals } from '../../services/professionals';
+import { LocationPrompt } from '../../components/location-prompt/location-prompt';
 import { UserLocation } from '../../services/user-location';
 import {
   hasLocation,
@@ -61,6 +62,7 @@ let lastSelectedId: string | null = null;
     GoogleMap,
     MapMarker,
     MapCircle,
+    LocationPrompt,
     Spinner,
     MatIconModule,
   ],

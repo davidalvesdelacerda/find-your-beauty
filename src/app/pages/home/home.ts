@@ -8,7 +8,6 @@ import { Favorites } from '../../services/favorites';
 import { Auth } from '../../services/auth';
 import { UserLocation } from '../../services/user-location';
 import { Spinner } from '../../components/spinner/spinner';
-import { LocationPrompt } from '../../components/location-prompt/location-prompt';
 import {
   hasLocation,
   ImagePosition,
@@ -53,7 +52,6 @@ type Salon = {
     ReviewsLabelPipe,
     FocusPipe,
     RouterLink,
-    LocationPrompt,
     Spinner,
     MatIconModule,
   ],
