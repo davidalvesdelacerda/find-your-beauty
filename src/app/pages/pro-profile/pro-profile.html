@@ -115,61 +115,59 @@
         </label>
       </section>
 
-      @if (!signup()) {
-        <section>
-          <h2>Instagram</h2>
-          @if (profile()?.instagramConnected) {
-            <p i18n class="hint muted">
-              Conectado como &#64;{{ profile()?.instagram }}.
-              {{ profile()?.instagramPhotos?.length ?? 0 }} fotos aparecem no seu perfil. Elas são
-              atualizadas todas as noites.
-            </p>
-            <div class="block">
-              <button
-                i18n
-                type="button"
-                class="refresh"
-                [disabled]="instagramBusy()"
-                (click)="refreshInstagram()"
-              >
-                @if (instagramBusy()) {
-                  Aguarde...
-                } @else {
-                  Atualizar fotos
-                }
-              </button>
-              <button
-                i18n
-                type="button"
-                class="signout"
-                [disabled]="instagramBusy()"
-                (click)="disconnectInstagram()"
-              >
-                Desconectar
-              </button>
-            </div>
-          } @else {
-            <p i18n class="hint muted">
-              Conecte a sua conta para mostrar as 12 fotos mais recentes do seu Instagram no perfil.
-              A conta precisa ser profissional (Criador ou Empresa): conta pessoal não funciona.
-              Para mudar, no Instagram vá em Configurações &gt; Tipo de conta e ferramentas &gt;
-              Mudar para conta profissional.
-            </p>
+      <section>
+        <h2>Instagram</h2>
+        @if (profile()?.instagramConnected) {
+          <p i18n class="hint muted">
+            Conectado como &#64;{{ profile()?.instagram }}.
+            {{ profile()?.instagramPhotos?.length ?? 0 }} fotos aparecem no seu perfil. Elas são
+            atualizadas todas as noites.
+          </p>
+          <div class="block">
             <button
               i18n
               type="button"
-              class="primary"
-              [disabled]="!instagramService.available"
-              (click)="connectInstagram()"
+              class="refresh"
+              [disabled]="instagramBusy()"
+              (click)="refreshInstagram()"
             >
-              Conectar Instagram
+              @if (instagramBusy()) {
+                Aguarde...
+              } @else {
+                Atualizar fotos
+              }
             </button>
-            @if (!instagramService.available) {
-              <p i18n class="hint muted">A conexão com o Instagram ainda não foi configurada.</p>
-            }
+            <button
+              i18n
+              type="button"
+              class="signout"
+              [disabled]="instagramBusy()"
+              (click)="disconnectInstagram()"
+            >
+              Desconectar
+            </button>
+          </div>
+        } @else {
+          <p i18n class="hint muted">
+            Conecte a sua conta para mostrar as 12 fotos mais recentes do seu Instagram no perfil. A
+            conta precisa ser profissional (Criador ou Empresa): conta pessoal não funciona. Para
+            mudar, no Instagram vá em Configurações &gt; Tipo de conta e ferramentas &gt; Mudar para
+            conta profissional.
+          </p>
+          <button
+            i18n
+            type="button"
+            class="primary"
+            [disabled]="!instagramService.available"
+            (click)="connectInstagram()"
+          >
+            Conectar Instagram
+          </button>
+          @if (!instagramService.available) {
+            <p i18n class="hint muted">A conexão com o Instagram ainda não foi configurada.</p>
           }
-        </section>
-      }
+        }
+      </section>
 
       <section>
         <div class="head">

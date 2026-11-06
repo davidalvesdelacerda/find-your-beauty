@@ -10,7 +10,7 @@ import { Auth } from '../services/auth';
 import { Users } from '../services/users';
 import { adminGuard } from './admin';
 import { clientAreaGuard, clientEntryGuard, clientGuard } from './client';
-import { proEntryGuard, proGuard } from './pro';
+import { proEntryGuard, proGuard, proInstagramGuard } from './pro';
 
 type Role = 'client' | 'professional' | null;
 
@@ -77,6 +77,24 @@ describe('proGuard', () => {
   it('sends an unfinished sign up back to its second step', async () => {
     setup(fakeAuth({ uid: 'p', signupIncomplete: true }));
     expect(await run(proGuard)).toBe('/pro/cadastro');
+  });
+});
+
+describe('proInstagramGuard', () => {
+  it('lets in a professional and a sign up that is not finished', async () => {
+    setup(fakeAuth({ uid: 'p', role: 'professional' }));
+    expect(await run(proInstagramGuard)).toBe(true);
+    TestBed.resetTestingModule();
+    setup(fakeAuth({ uid: 'p', signupIncomplete: true }));
+    expect(await run(proInstagramGuard)).toBe(true);
+  });
+
+  it('sends visitors to the professional login and clients to the start', async () => {
+    setup(fakeAuth({}));
+    expect(await run(proInstagramGuard)).toBe('/pro/entrar');
+    TestBed.resetTestingModule();
+    setup(fakeAuth({ uid: 'c', role: 'client' }));
+    expect(await run(proInstagramGuard)).toBe('/');
   });
 });
 

@@ -446,7 +446,10 @@ export class ProProfile {
 
   protected readonly instagramBusy = signal(false);
 
-  protected connectInstagram() {
+  // Leaves the site for Instagram: what was typed is saved first, so nothing is lost on the way back
+  protected async connectInstagram() {
+    clearTimeout(this.autoSaveTimer);
+    await this.saveDraft();
     this.instagramService.connect();
   }
 

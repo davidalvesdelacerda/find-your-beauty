@@ -3,7 +3,7 @@ import { adminGuard } from './guards/admin';
 import { cardsGuard } from './guards/cards';
 import { checkoutGuard } from './guards/checkout';
 import { clientAreaGuard, clientEntryGuard, clientGuard } from './guards/client';
-import { proEntryGuard, proGuard } from './guards/pro';
+import { proEntryGuard, proGuard, proInstagramGuard } from './guards/pro';
 import { PATHS } from './utils/paths';
 import { RouteSeo } from './services/seo';
 import { environment } from '../environments/environment';
@@ -189,7 +189,7 @@ export const routes: Routes = [
   },
   {
     path: 'pro/instagram',
-    canActivate: [proGuard],
+    canActivate: [proInstagramGuard],
     loadComponent: () => import('./pages/pro-instagram/pro-instagram').then((m) => m.ProInstagram),
   },
   {

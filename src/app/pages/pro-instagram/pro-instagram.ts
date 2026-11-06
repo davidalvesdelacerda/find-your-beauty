@@ -1,6 +1,7 @@
 import { Component, input, signal, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Spinner } from '../../components/spinner/spinner';
+import { Auth } from '../../services/auth';
 import { Instagram } from '../../services/instagram';
 import { Professionals } from '../../services/professionals';
 import { log } from '../../utils/log';
@@ -15,7 +16,7 @@ import { PATHS } from '../../utils/paths';
       @if (error()) {
         <h1 i18n>Não foi possível conectar</h1>
         <p>{{ error() }}</p>
-        <a i18n routerLink="/pro/perfil">Voltar ao perfil</a>
+        <a i18n [routerLink]="back()">Voltar ao perfil</a>
       } @else {
         <app-spinner />
         <p i18n>Conectando o seu Instagram...</p>
@@ -37,12 +38,15 @@ export class ProInstagram {
   private readonly instagram = inject(Instagram);
   private readonly professionals = inject(Professionals);
   private readonly router = inject(Router);
+  private readonly auth = inject(Auth);
 
   readonly code = input<string>();
   readonly state = input<string>();
   readonly error_description = input<string>();
 
   protected readonly error = signal('');
+  protected readonly back = () =>
+    this.auth.signupIncomplete() ? PATHS.proSignup : PATHS.proProfile;
 
   constructor() {
     // Inputs are set after the constructor
@@ -59,7 +63,8 @@ export class ProInstagram {
     try {
       await this.instagram.finish(code, this.state());
       await this.professionals.load();
-      this.router.navigateByUrl(PATHS.proProfile);
+      // Back to the sign up when it is not finished yet
+      this.router.navigateByUrl(this.auth.signupIncomplete() ? PATHS.proSignup : PATHS.proProfile);
     } catch (error) {
       log.error('Failed to connect Instagram', error);
       const message = (error as { message?: string }).message ?? '';

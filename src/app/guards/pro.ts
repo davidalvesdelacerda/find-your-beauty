@@ -26,3 +26,14 @@ export const proEntryGuard: CanActivateFn = async () => {
   if (auth.role() === 'professional') return router.parseUrl(PATHS.proHome);
   return true;
 };
+
+// The Instagram connection also happens during the sign up: Instagram sends the professional back here before the
+// account is approved
+export const proInstagramGuard: CanActivateFn = async () => {
+  const auth = inject(Auth);
+  const router = inject(Router);
+
+  await auth.whenReady;
+  if (auth.role() === 'professional' || auth.signupIncomplete()) return true;
+  return router.parseUrl(auth.user() ? PATHS.home : PATHS.proLogin);
+};
