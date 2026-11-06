@@ -1,5 +1,5 @@
 import { MatIconModule } from '@angular/material/icon';
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, DestroyRef, inject, input, signal } from '@angular/core';
 import {
   AbstractControl,
   FormsModule,
@@ -46,6 +46,11 @@ export class Signup {
 
   // Set by the route: professionals sign up in their own area
   readonly pro = input(false);
+
+  constructor() {
+    // Leaving the "sent" message (to the login, for instance) closes it: coming back shows the form
+    inject(DestroyRef).onDestroy(() => this.auth.clearSignupSubmitted());
+  }
 
   protected readonly form = this.fb.group({
     firstName: ['', [Validators.required, minTrimmedLength(3)]],

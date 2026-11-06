@@ -348,6 +348,11 @@ export class Auth {
     await signOut(this.auth);
   }
 
+  // The "sent" message was seen: the next visit to the sign up shows the form again
+  clearSignupSubmitted() {
+    this.signupSubmitted.set(false);
+  }
+
   signOut() {
     return signOut(this.auth);
   }
