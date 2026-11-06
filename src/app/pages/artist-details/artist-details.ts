@@ -33,6 +33,7 @@ import {
 import { Auth } from '../../services/auth';
 import { Professionals } from '../../services/professionals';
 import { Favorites } from '../../services/favorites';
+import { ProfileViews } from '../../services/profile-views';
 import { Reviews } from '../../services/reviews';
 import { Users } from '../../services/users';
 import { Feedback } from '../../services/feedback';
@@ -74,6 +75,7 @@ export class ArtistDetails {
   protected readonly professionals = inject(Professionals);
   protected readonly auth = inject(Auth);
   private readonly reviewsService = inject(Reviews);
+  private readonly profileViews = inject(ProfileViews);
   private readonly users = inject(Users);
   protected readonly favorites = inject(Favorites);
   private readonly feedback = inject(Feedback);
@@ -200,6 +202,11 @@ export class ArtistDetails {
   protected readonly formatRelative = formatRelative;
 
   constructor() {
+    // A visit to a professional that clients can see (the server ignores her own visits)
+    effect(() => {
+      const artist = this.artist();
+      if (artist && artist.published) void this.profileViews.register(artist.id);
+    });
     effect(() => {
       const id = this.id();
       const uid = this.auth.user()?.uid;

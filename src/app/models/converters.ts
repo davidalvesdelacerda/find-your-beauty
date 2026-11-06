@@ -11,10 +11,13 @@ export const professionalConverter: FirestoreDataConverter<Professional> = {
     void id;
     return data;
   },
-  fromFirestore: (snapshot: QueryDocumentSnapshot) => ({
-    ...(snapshot.data() as Omit<Professional, 'id'>),
-    id: snapshot.id,
-  }),
+  fromFirestore: (snapshot: QueryDocumentSnapshot) => {
+    const data = snapshot.data() as Omit<Professional, 'id' | 'views'> & {
+      views?: number | string;
+    };
+    // The count is a number once visits are counted; it was text ("0") before
+    return { ...data, id: snapshot.id, views: String(data.views ?? 0) };
+  },
 };
 
 // users/{uid}

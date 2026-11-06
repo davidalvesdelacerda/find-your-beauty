@@ -683,6 +683,36 @@ const enforce = async (limits: { limit: RateLimit; message: string }[]) => {
 // created by a deploy that failed halfway kept answering 403 until it was deleted and deployed again.
 const PUBLIC = { invoker: 'public' } as const;
 
+// A visit to the page of a professional adds one to her `views`. Visitors are not signed in, so the count goes through
+// here (no rule lets a visitor write the profile). The same visitor (IP) counts once every few hours for each
+// professional, and the professional herself never counts.
+const VIEW_WINDOW_SECONDS = 6 * 3600;
+
+export const registerView = onCall(PUBLIC, async (request) => {
+  const id = request.data?.professionalId;
+  if (typeof id !== 'string' || !id || id.length > 128 || id.includes('/')) {
+    throw new HttpsError('invalid-argument', 'professionalId is required');
+  }
+  if (request.auth?.uid === id) return { counted: false };
+
+  const ref = db.doc(`professionals/${id}`);
+  const professional = (await ref.get()).data();
+  // Only what clients can see
+  if (professional?.['published'] !== true) return { counted: false };
+
+  const first = await hit(db, {
+    scope: 'view',
+    key: `${clientIp(request)}:${id}`,
+    max: 1,
+    windowSeconds: VIEW_WINDOW_SECONDS,
+  });
+  if (!first) return { counted: false };
+
+  // `views` was saved as text ("0") before the count existed: an increment replaces a value that is not a number
+  await ref.update({ views: FieldValue.increment(1) });
+  return { counted: true };
+});
+
 // Password reset, sent by Resend instead of by Firebase. It always answers ok, so nobody can find out
 // which e-mails have an account. Calls over the limit of one e-mail are dropped quietly for the same reason.
 export const sendPasswordReset = onCall({ ...PUBLIC, secrets: [resendKey] }, async (request) => {
