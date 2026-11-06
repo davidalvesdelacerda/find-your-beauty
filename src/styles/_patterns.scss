@@ -14,6 +14,30 @@
   color: var(--on-primary);
 }
 
+// The button of Instagram: its gradient, the glyph (an <svg> before the text) and white letters
+@mixin instagram-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 0;
+  background: linear-gradient(
+    45deg,
+    var(--instagram-orange),
+    var(--instagram-pink) 45%,
+    var(--instagram-purple) 75%,
+    var(--instagram-blue)
+  );
+  color: #fff;
+  font-weight: 700;
+
+  svg {
+    flex: none;
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+}
+
 // White button with a red outline (decline, deny)
 @mixin danger-outline-button {
   background: #fff;

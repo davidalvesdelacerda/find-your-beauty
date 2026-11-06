@@ -29,6 +29,7 @@ h1 {
 }
 
 .primary,
+.instagram,
 .refresh,
 .signout {
   width: 100%;
@@ -55,6 +56,17 @@ h1 {
   border: 1.5px solid var(--danger-strong);
   background: #fff;
   color: var(--danger-strong);
+}
+
+// "Conectar Instagram": the colors and the glyph of Instagram
+.instagram {
+  @include instagram-button;
+  margin-top: 1rem;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 }
 
 // The same button as "Desconectar", in the color of the app instead of red

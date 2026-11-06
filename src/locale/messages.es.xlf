@@ -4974,12 +4974,12 @@
           <context context-type="linenumber">165,167</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7603294268640455859" datatype="html">
-        <source> Conectar Instagram </source>
-        <target> Conectar Instagram </target>
+      <trans-unit id="1920476557158552932" datatype="html">
+        <source>Conectar Instagram</source>
+        <target>Conectar Instagram</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pro-profile/pro-profile.html</context>
-          <context context-type="linenumber">177</context>
+          <context context-type="linenumber">175,176</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1859085176889624156" datatype="html">
