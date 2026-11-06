@@ -123,11 +123,30 @@ export const connectInstagram = onCall(
       });
       throw error;
     });
-    const long = await getJson(
-      `${GRAPH}/access_token?grant_type=ig_exchange_token&client_secret=${appSecret.value()}&access_token=${short['access_token']}`,
+    // Which step fails is in the log: the message of Instagram alone does not say
+    const step = <T>(name: string, run: () => Promise<T>) =>
+      run().catch((error) => {
+        logger.error('Instagram step failed', { step: name, message: (error as Error).message });
+        throw error;
+      });
+
+    // The long-lived token. Instagram answered "Unsupported request - method type: get" to the GET of the docs
+    // for a professional in production, so it is sent as a POST first, and as a GET when the POST is refused.
+    const exchange = {
+      grant_type: 'ig_exchange_token',
+      client_secret: appSecret.value(),
+      access_token: short['access_token'],
+    };
+    const long = await step('long-lived token', () =>
+      getJson(`${GRAPH}/access_token`, {
+        method: 'POST',
+        body: new URLSearchParams(exchange),
+      }).catch(() => getJson(`${GRAPH}/access_token?${new URLSearchParams(exchange)}`)),
     );
     const token = long['access_token'] as string;
-    const me = await getJson(`${GRAPH}/me?fields=user_id,username&access_token=${token}`);
+    const me = await step('profile', () =>
+      getJson(`${GRAPH}/me?fields=user_id,username&access_token=${token}`),
+    );
 
     // The token is only readable by Cloud Functions: no rule opens the `private` documents
     await tokenRef(uid).set({
@@ -143,7 +162,7 @@ export const connectInstagram = onCall(
         instagramUserId: String(me['user_id']),
       });
 
-    const photos = await syncPhotos(uid, token);
+    const photos = await step('photos', () => syncPhotos(uid, token));
     return { username: me['username'] as string, photos };
   },
 );
